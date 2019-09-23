@@ -2,9 +2,9 @@
 Sistema de login em PHP e JavaScript.
 
 ---
-#passo a passo em todo inicio de aula
+# passo a passo em todo inicio de aula
 
-  ##habilitar proxy
+  ## habilitar proxy
 Tecla Windows - Abrir a janela Prompt de Comando
 Copie e cole a linha abaixo - selecione e pressione as teclas Ctrl C
 
@@ -22,15 +22,15 @@ Pressione Ente
 -  clique em *clone*
 
 ## habilitar o servidor web **Apache** e  o servidor **MySQL**
-- tecla Windows - Abrir o XAMPP control Panel
+-  tecla Windows - Abrir o XAMPP control Panel
 -  clique em star para Apache
 -  clieque em start para MySQL
 -  verifique se apareceu a porta 80 Apache e 3306 MySQL
-- verifique se ficou verde o apache e MysQL
+-  verifique se ficou verde o apache e MysQL
 
 ## testar se esta funcionando
-  -Abra o navegador firefox azul e digite http://localhost/login
+-  Abra o navegador firefox azul e digite http://localhost/login
   
 ## editar utilizando o VS Code
-  - tecla Windows - abir o visual studio cod (azul)
-  - *abrir pasta* no VS Code escolha C:\xampp\htdocs\login
+-  tecla Windows - abir o visual studio cod (azul)
+-  *abrir pasta* no VS Code escolha C:\xampp\htdocs\login
