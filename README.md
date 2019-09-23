@@ -1,5 +1,8 @@
 # login
 Sistema de login em PHP e JavaScript.
+# aula01 - 23/09/2019   
+🌹💩 começou a primavera 👹🌺
+Aula inicial, configuraçao do pojeto no gitHub e criaçao do passo a passo.
 
 ---
 # passo a passo em todo inicio de aula
@@ -10,7 +13,8 @@ Copie e cole a linha abaixo - selecione e pressione as teclas Ctrl C
 
   git config --global http.proxy http://10.1.21.254:3128
 
-Pressione Ente
+Pressione Enter
+
 ## clonar o repositorio **login** na pasta c:\xamp\htdocs
 -  tecla windows - abrir o github desktop
 -  clique em *sing in to github.com*
@@ -30,7 +34,7 @@ Pressione Ente
 
 ## testar se esta funcionando
 -  Abra o navegador firefox azul e digite http://localhost/login
-  
+
 ## editar utilizando o VS Code
 -  tecla Windows - abir o visual studio cod (azul)
 -  *abrir pasta* no VS Code escolha C:\xampp\htdocs\login
