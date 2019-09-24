@@ -1,5 +1,11 @@
 # login
-Sistema de login em PHP e JavaScript.
+Sistema de login em PHP e JavaScript.]
+
+# aula02 - 24/09/2019
+Um dia antes do meu aniversário!
+
+
+
 # aula01 - 23/09/2019   
 🌹💩 começou a primavera 👹🌺
 Aula inicial, configuraçao do pojeto no gitHub e criaçao do passo a passo.
