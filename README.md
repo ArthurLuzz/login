@@ -3,11 +3,12 @@ Sistema de login em PHP e JavaScript.]
 
 # aula02 - 24/09/2019
 🌹Um dia antes do meu aniversário!🌺
-
--Layout bootstrap para os formulários
--Formulário de login
--formulário de recuperação de senha
-- ~formulário de cadastro de novos usúarios~ 
+      
+     Layout bootstrap para os formulários
+     
+- Formulário de login
+- Formulário de recuperação de senha
+- ~Formulário de cadastro de novos usúarios~ 
 
 
 
