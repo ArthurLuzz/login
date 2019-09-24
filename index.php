@@ -16,9 +16,10 @@ abra a URL http://localhost/login/ no navegador fireFrox(Azul)
     <title>Sistema de login</title>
 </head>
 
-<body class="bg-dark">   <!-- Fundo escuro -->
+<body class="bg-dark">
+    <!-- Fundo escuro -->
     <main class="container mt-4">
-        <section class="row"> 
+        <section class="row">
             <div class="col-lg-4 offset-lg-4" id="alerta">
                 <div class="alert alert-success text-center">
                     <strong class="resultado">
@@ -34,13 +35,45 @@ abra a URL http://localhost/login/ no navegador fireFrox(Azul)
                     Entrar no Sistema.
                 </h2>
                 <form action="#" method="post" class="p-2" id="formLogin">
+
                     <div class="form-group">
-                        <input type="text" name="" id="">
+                        <input type="text" name="nomeUsuario" id="nomeUsuario" placeholder="Nome de Usuário" class="form-control">
                     </div>
+
+                    <div class="form-group">
+                        <input type="password" name="senhaUsuario" id="senhaUsuario" placeholder="senha" class="form-control">
+                    </div>
+
+                    <div class="from-group">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="lembrar" id="lembrar" class="custom-control-input">
+                            
+                            <label for="lembrar" class="custom-control-label">
+                                Lembrar de mim
+                            </label>
+
+                            <a href="#" class="float-right" id="btnEsqueci">
+                                Esqueci a senha!
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group"> 
+                        <input type="submit" value="Entrar" name="bntEntrar" id="btnEntrar" class="btn btn-primary btn-block">
+                    </div>
+
+                    <div class="form-group">
+                        <p class="text-center">
+                            Novo usuário? <a href="#" id="btnRegistrar">
+                                Registre-se aqui!!
+                            </a>
+                        </p>
+                    </div>
+
                 </form>
             </div>
         </section>
-</main>
+    </main>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
