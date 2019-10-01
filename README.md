@@ -2,13 +2,14 @@
 Sistema de login em PHP e JavaScript.
 
 # aula04 - 01/10/2019
-
 primeiro dia do mês de outubro🌹
+- validação com HTML5
+- validação dos campos com jQuery validate
 
 # aula03 - 30/09/2019
 
 - Formulario de cadastro de novos usuários
-- validação dos campos com jQuery validate
+- ~validação dos campos com jQuery validate~
 - ~ocultar e mostrar os usuários com jQuery~
 
 jQuery é uma biblioteca de funções javaScript.
