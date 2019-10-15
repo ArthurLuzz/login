@@ -3,6 +3,8 @@ Sistema de login em PHP e JavaScript.
 
 # aula07 - 15/10/2019
 - grande dia🌹
+- DIA DO PROFESSOR 
+- presistencia de dados no banco de dados.
 
 # aula06 - 08/10/2019
 - ~nada feito~
@@ -71,3 +73,10 @@ Pressione Enter
 ## editar utilizando o VS Code
 -  tecla Windows - abir o visual studio cod (azul)
 -  *abrir pasta* no VS Code escolha C:\xampp\htdocs\login
+
+## importar o banco de dados
+- acessar no navegador firefox azul http://localhost/phpmyadmin
+- clicar em importar 
+- selecionar o arquivo clicando em Browse 
+- abra o arquivo 127.0.0.1.slq e clique em executar
+- o Banco deve ter sido importado corretamente
