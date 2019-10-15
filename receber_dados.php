@@ -1,6 +1,13 @@
 <?php
 //Teste se existe a ação
+require_once 'configBD.php';
 
+function verificar_entrada($entrada){
+    //filtrando a entrada
+    $saida = htmlspecialchars($entrada);
+    $saida = stripslashes($saida);
+    $saida = trim($saida);
+}
 
 
 if (isset($_POST['action'])) {
