@@ -47,6 +47,15 @@ if (isset($_POST['action'])) {
             $slq->execute();
             $resultado = $sql->get_result();
             $linha = $resultado->fetch_array(MYSQL_ASSOC);
+
+            //verificando a existencia do usuario no banco
+            if($linha['nomeDoUsuario'] == $nomeDoUsuario){
+                echo "<p class='text-danger'>Usuario indisponivel </p>";
+
+            }elseif ($linha['emailUsuario'] == $emailUsuario){
+                echo "<p class='text-danger'>e-mail indisponivel </p>";
+        }elseif{
+            //usuario pode ser cadastrado no banco de dados
         }
 
 
