@@ -44,9 +44,9 @@ if (isset($_POST['action'])) {
             $sql = $connect->prepare("SELECT nomeDoUsuario, emailUsuario 
             FROM usuario WHERE nomeDoUsuario = ? OR emailUsuario = ?");
             $sql->bind_param("ss", $nomeDoUsuario, $emailUsuario);
-            $slq->execute();
+            $sql->execute();
             $resultado = $sql->get_result();
-            $linha = $resultado->fetch_array(MYSQL_ASSOC);
+            $linha = $resultado->fetch_array(MYSQLI_ASSOC);
 
             //verificando a existencia do usuario no banco
             if($linha['nomeDoUsuario'] == $nomeDoUsuario){
@@ -54,10 +54,21 @@ if (isset($_POST['action'])) {
 
             }elseif ($linha['emailUsuario'] == $emailUsuario){
                 echo "<p class='text-danger'>e-mail indisponivel </p>";
-        }elseif{
+        }else{
             //usuario pode ser cadastrado no banco de dados
+            $sql = $connect->prepare("INSERT into usuario (nomeDoUsuario,
+            nomeCompleto, emailUsuario, senhaDoUsuario, dataCriado)
+            values(?, ?, ?, ?, ?)");
+            $sql->bind_param("sssss", $nomeDoUsuario, $nomeCompleto, 
+            $emailUsuario, $senhaCodificada, $dataCriado);
+            if($sql->execute()){
+                echo"<p class='text-success'> Usuario Cadastrado</p>";
+            }else{
+                echo"<p class='text-danger'> Usuario nao cadastrado </p>";
+                echo"<p class='text-danger'> Algo deu Muito errado </p>";
+                }
+            }
         }
-
 
     } else if ($_POST['action'] == 'login') {
         //Senão, teste se ação é login
