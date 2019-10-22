@@ -1,4 +1,7 @@
 <?php
+//iniciaondo a sessao
+session_start();
+
 //Teste se existe a ação
 require_once 'configBD.php';
 
@@ -78,13 +81,11 @@ if (isset($_POST['action'])) {
         $sql = $connect->prepare("SELECT * FROM usuario WHERE senhaDoUsuario = ?
         AND nomeDoUsuario = ?");
         $sql->bind_param("ss", $senha, $nomeUsuario);
-
         $sql ->execute();
-        
-
         $busca = $sql->fetch();
 
         if($busca != null ){
+            $_SESSION['nomeDoUsuario']= $nomeUsuario;
             echo"ok";
         }else {
             echo"<p class='text-danger'>";
