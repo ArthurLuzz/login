@@ -16,9 +16,7 @@ if(isset($_SESSION['nomeDoUsuario'])){
     $emailUsuario = $linha['emailUsuario'];
     $dataCriado = $linha['dataCriado'];
 
-        function data($dataCriado){
-    return date("d/m/Y", strtotime($dataCriadoConv));
-}
+    $dataCriado = date('d/m/Y', strtotime($dataCriado));
 
 }else{
     //se nao esta logado, redirecionar para index.php

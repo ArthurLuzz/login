@@ -45,18 +45,33 @@
                 <form action="#" method="post" class="p-2" id="formLogin">
 
                     <div class="form-group">
-                        <input type="text" name="nomeUsuario" id="nomeUsuario" placeholder="Nome de Usuário" class="form-control" required minlength="5">
+                        <input type="text" name="nomeUsuario" 
+                        id="nomeUsuario" placeholder="Nome de Usuário" class="form-control" 
+                        required minlength="5" value="<?= isset($_COOKIE['nomeDoUsuario'])
+                        ?$_COOKIE['nomeDoUsuario']:""; 
+                        ?>">
+
+                        
                     </div>
 
 
                     <div class="form-group">
-                        <input type="password" name="senhaUsuario" id="senhaUsuario" placeholder="Senha" class="form-control" required minlength="6">
+                        <input type="password" name="senhaUsuario" 
+                        id="senhaUsuario" placeholder="Senha" class="form-control" 
+                        required minlength="6" value="<?= isset($_COOKIE['senhaDoUsuario'])
+                        ?$_COOKIE['senhaDoUsuario']:""; 
+                        ?>">
                     </div>
 
                     <div class="form-group mt-5">
                         <div class="custom-control custom-checkbox">
 
-                            <input type="checkbox" name="lembrar" id="lembrar" class="custom-control-input">
+                            <input type="checkbox" name="lembrar" 
+                            id="lembrar" class="custom-control-input"
+                            <?= 
+                            isset($_COOKIE['senhaDoUsuario'])?"checked":"";
+                    
+                            ?>>
 
                             <label for="lembrar" class="custom-control-label">
                                 Lembrar de mim.
