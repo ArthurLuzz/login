@@ -50,25 +50,35 @@ require_once "session.php ";
         <div class="container">
             <h1 class="display-4">Boas Vindas</h1>
 
+
             <h2 class="display-2 text-center rounded p-1 text-light" style="background-color: deepSkyBlue">
                 <?= $nomeCompleto ?>
             </h2>
 
-            <h2 class="text-center">
-                E-mail do Usuario:
-                <a href="mailto:<?= $emailUsuario ?>">
-                    <?= $emailUsuario ?>
-                </a>
-            </h2>
+            <div class="row">
+                <div class="col-4">
 
-            <h2 class="text-center">
-                Registrado em: <?= $dataCriado ?>
+                        <img class="img-thumbnail" src="<?= $urlImagem ?>"/>
+                    
 
-            </h2>
+                </div>
+                <div class="col-8">
+                    <h2 class="text-center">
+                        E-mail do Usuario:
+                        <a href="mailto:<?= $emailUsuario ?>">
+                            <?= $emailUsuario ?>
+                        </a>
+                    </h2>
 
-            <h2 class="text-center">
-                <img src=<?='$urlImagem'?> />
-            </h2>
+                    <h2 class="text-center">
+                        Registrado em: <?= $dataCriado ?>
+
+                    </h2>
+
+
+
+                </div>
+            </div>
         </div>
     </div>
 
