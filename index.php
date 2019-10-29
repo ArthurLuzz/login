@@ -18,7 +18,8 @@
     <style>
         #alerta,
         #caixaSenha,
-        #caixaRegistro {
+        #caixaRegistro,
+        #caixaNovo {
             display: none;
         }
     </style>
@@ -91,8 +92,8 @@
                     <!-- formulario mostrar -->
                     <div class="form-group">
                         <p class="text-center">
-                            Novo <a href="#" id="btnNovo">
-                                Novo
+                            <a href="#" id="btnNovo">
+                                Mostrar
                             </a>
                         </p>
                     </div>
@@ -163,13 +164,11 @@
 
                     </div>
 
-
-
                     <div class="form-group">
                         <p class="text-center">
-                            Já registrado?
-                            <a href="#" id="btnJaRegistrado">
-                                Entrar por aqui.
+
+                            <a href="#" id="btnVoltar">
+                                Voltar
                             </a>
                         </p>
                     </div>
@@ -353,6 +352,11 @@
             $("#btnNovo").click(function() {
                 $("#caixaNovo").show(); //Mostrar
                 $("#caixaLogin").hide(); //Ocultar
+            });
+
+            $("#btnVoltar").click(function() {
+                $("#caixaLogin").show(); //Mostrar
+                $("#caixaNovo").hide(); //Ocultar
             });
 
             //Cadastro de novo usuário

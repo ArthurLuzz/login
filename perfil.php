@@ -1,7 +1,5 @@
 <?php
-    require_once "session.php ";
-
-
+require_once "session.php ";
 
 ?>
 
@@ -40,7 +38,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">Sobre</a>
-                        <a class="dropdown-item" href="#">Fotos</a>
+                        <a class="dropdown-item" href="fotos.php">Fotos</a>
                         <a class="dropdown-item" href="sair.php">Sair</a>
                     </div>
                 </li>
@@ -52,21 +50,24 @@
         <div class="container">
             <h1 class="display-4">Boas Vindas</h1>
 
-            <h2 class="display-2 text-center rounded p-1 text-light"
-            style="background-color: deepSkyBlue" > 
+            <h2 class="display-2 text-center rounded p-1 text-light" style="background-color: deepSkyBlue">
                 <?= $nomeCompleto ?>
             </h2>
 
             <h2 class="text-center">
                 E-mail do Usuario:
-                <a href="mailto:<?=$emailUsuario?>">
-                <?=$emailUsuario?>
+                <a href="mailto:<?= $emailUsuario ?>">
+                    <?= $emailUsuario ?>
                 </a>
             </h2>
 
             <h2 class="text-center">
-                Registrado em: <?=$dataCriado?>
-                
+                Registrado em: <?= $dataCriado ?>
+
+            </h2>
+
+            <h2 class="text-center">
+                <img src=<?='$urlImagem'?> />
             </h2>
         </div>
     </div>
