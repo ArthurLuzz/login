@@ -45,33 +45,27 @@
                 <form action="#" method="post" class="p-2" id="formLogin">
 
                     <div class="form-group">
-                        <input type="text" name="nomeUsuario" 
-                        id="nomeUsuario" placeholder="Nome de Usuário" class="form-control" 
-                        required minlength="5" value="<?= isset($_COOKIE['nomeDoUsuario'])
-                        ?$_COOKIE['nomeDoUsuario']:""; 
-                        ?>">
+                        <input type="text" name="nomeUsuario" id="nomeUsuario" placeholder="Nome de Usuário" class="form-control" required minlength="5" value="<?= isset($_COOKIE['nomeDoUsuario'])
+                                                                                                                                                                    ? $_COOKIE['nomeDoUsuario'] : "";
+                                                                                                                                                                ?>">
 
-                        
+
                     </div>
 
 
                     <div class="form-group">
-                        <input type="password" name="senhaUsuario" 
-                        id="senhaUsuario" placeholder="Senha" class="form-control" 
-                        required minlength="6" value="<?= isset($_COOKIE['senhaDoUsuario'])
-                        ?$_COOKIE['senhaDoUsuario']:""; 
-                        ?>">
+                        <input type="password" name="senhaUsuario" id="senhaUsuario" placeholder="Senha" class="form-control" required minlength="6" value="<?= isset($_COOKIE['senhaDoUsuario'])
+                                                                                                                                                                ? $_COOKIE['senhaDoUsuario'] : "";
+                                                                                                                                                            ?>">
                     </div>
 
                     <div class="form-group mt-5">
                         <div class="custom-control custom-checkbox">
 
-                            <input type="checkbox" name="lembrar" 
-                            id="lembrar" class="custom-control-input"
-                            <?= 
-                            isset($_COOKIE['senhaDoUsuario'])?"checked":"";
-                    
-                            ?>>
+                            <input type="checkbox" name="lembrar" id="lembrar" class="custom-control-input" <?=
+                                                                                                                isset($_COOKIE['senhaDoUsuario']) ? "checked" : "";
+
+                                                                                                            ?>>
 
                             <label for="lembrar" class="custom-control-label">
                                 Lembrar de mim.
@@ -94,11 +88,101 @@
                             </a>
                         </p>
                     </div>
+                    <!-- formulario mostrar -->
+                    <div class="form-group">
+                        <p class="text-center">
+                            Novo <a href="#" id="btnNovo">
+                                Novo
+                            </a>
+                        </p>
+                    </div>
 
                 </form>
             </div>
         </section>
         <!-- Final da Seção de Login-->
+        <!-- Formulário de NOVO -->
+        <section class="row mt-5">
+            <div class="col-lg-4 offset-lg-4 bg-light rounded" id="caixaNovo">
+                <h2 class="text-center mt-2">
+                    Novo
+                </h2>
+                <form action="#" method="post" id="formNovo" class="p-2">
+
+                    <div class="form-group">
+                        <label for="nomeCompleto">Nome Completo</label>
+                        <input type="text" name="nomeCompleto" id="nomeCompleto" placeholder="Digite o seu nome completo" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" placeholder="Digite o seu E-mail" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dataNiver">Data de Aniversário</label>
+                        <input type="date" name="dataNiver" id="dataNiver" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="urlFace">Perfil do Facebook</label>
+                        <input type="url" name="urlFace" id="urlFace" placeholder="Pagina do perfil do Facebook" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="urlImagem">Imagem de perfil</label>
+                        <input type="url" name="urlImagem" id="urlImagem" placeholder="Link da imagem de perfil" class="form-control">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="estado">Estado</label>
+                        <select class="form-control" name="estado" id="estado">
+                            <option></option>
+                            <option value="PR">Paraná</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="SC">Santa Catarina</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cidade">cidade</label>
+                        <select class="form-control" name="cidade" id="cidade">
+                            <option></option>
+                            <option value="brusque">Brusque</option>
+                            <option value="itajai">Itajaí</option>
+                            <option value="guabiruba">Guabiruba</option>
+                            <option value="navegantes">Navegantes</option>
+                            <option value="balnearioCamboriu">Balneário Camboriú</option>
+                            <option value="novaTento">Nova Trento</option>
+                        </select>
+
+                        <div class="form-group mt-4">
+                            <input type="submit" value="Enviar" name="btnEnviar" class="btn btn-info btn-block">
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <p class="text-center">
+                            Já registrado?
+                            <a href="#" id="btnJaRegistrado">
+                                Entrar por aqui.
+                            </a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!-- Fim da Seção de NOVO -->
+
+
+
+
+
+
 
         <!-- Formulário de Recuperação de Senha -->
         <section class="row mt-5">
@@ -152,6 +236,11 @@
 
                     <div class="form-group">
                         <input type="email" name="emailUsuario" id="emailUsuario" class="form-control" placeholder="E-mail" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="urlImagem">Imagem de perfil</label>
+                        <input type="url" name="urlImagem" id="urlImagem" placeholder="Link da imagem de perfil" class="form-control">
                     </div>
 
                     <div class="form-group">
@@ -261,6 +350,11 @@
                 $("#caixaRegistro").hide(); //Ocultar
             });
 
+            $("#btnNovo").click(function() {
+                $("#caixaNovo").show(); //Mostrar
+                $("#caixaLogin").hide(); //Ocultar
+            });
+
             //Cadastro de novo usuário
             $("#btnRegistrar").click(function(e) {
                 if (document
@@ -294,9 +388,9 @@
                         data: $("#formLogin").serialize() + '&action=login',
                         success: function(resposta) {
                             $("#alerta").show();
-                            if(resposta==="ok"){
+                            if (resposta === "ok") {
                                 window.location = "perfil.php";
-                            }else{
+                            } else {
                                 $(".resultado").html(resposta);
                             }
                             // = e afirmaçao 
