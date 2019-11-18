@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Out-2019 às 21:27
+-- Tempo de geração: 18-Nov-2019 às 20:15
 -- Versão do servidor: 10.3.16-MariaDB
 -- versão do PHP: 7.3.7
 
@@ -38,8 +38,20 @@ CREATE TABLE `usuario` (
   `nomeDoUsuario` varchar(45) NOT NULL,
   `emailUsuario` varchar(45) NOT NULL,
   `senhaDoUsuario` char(40) NOT NULL,
-  `dataCriado` date NOT NULL
+  `dataCriado` date NOT NULL,
+  `urlImagem` varchar(200) NOT NULL,
+  `token` char(10) NOT NULL,
+  `tempoDeVida` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`idUsuario`, `nomeCompleto`, `nomeDoUsuario`, `emailUsuario`, `senhaDoUsuario`, `dataCriado`, `urlImagem`, `token`, `tempoDeVida`) VALUES
+(1, 'ababaa', 'ababaa', 'arthur@luz', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2019-11-18', 'https://ichef.bbci.co.uk/news/660/cpsprodpb/F767/production/_103953336_de27.jpg', '', '2019-11-18 22:08:50'),
+(2, 'ababaaa', 'ababaaa', 'arthur@luzz', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2019-11-18', 'https://ichef.bbci.co.uk/news/660/cpsprodpb/F767/production/_103953336_de27.jpg', '', '2019-11-18 22:08:50'),
+(3, 'aaabbb', 'aaabbb', 'aaa@bbb', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2019-11-18', 'https://ichef.bbci.co.uk/news/624/cpsprodpb/6BF4/production/_103963672_639bfc1c-1921-4316-8739-b394653cb68d.jpg', '', '2019-11-18 22:09:53');
 
 --
 -- Índices para tabelas despejadas
@@ -61,7 +73,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `idUsuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
