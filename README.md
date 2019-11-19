@@ -3,9 +3,11 @@ Sistema de login em PHP e JavaScript.
 
 # aula14 - 19/11/2019
 - Azar é verão
+- geração de uma nova senha 
 
 # aula13 - 18/11/2019
 - Ano ta quase acabando
+- preparaçao para geraçao de uma nova senha
 
 # aula12 - 1/11/2019
 - ~Continuaçao da Avaliação~
