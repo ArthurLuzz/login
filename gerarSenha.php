@@ -1,3 +1,16 @@
+<?php
+    if(isset($GET["token"]) && isset($GET['email'])){
+        require_once 'configBD.php';
+        $email = $_GET['email'];
+        $token = $_GET['token'];
+        $msg = "$email : $token";
+        //gerarSenha.php?token=123456&email=aaa@bbb
+    }else{
+        header("location: index.php");
+        exit();
+    }
+?>
+
 <!doctype html>
 <html lang="pt-br">
 
@@ -39,7 +52,7 @@
                     <div class="form-group">
                         
                         <input type="submit" value="Criar uma nova senha "  name="gerar" 
-                        class="bnt btn-block btn-primary">
+                        class="btn btn-block btn-primary">
 
                     </div>
 

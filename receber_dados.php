@@ -42,6 +42,7 @@ if (isset($_POST['action'])) {
         // echo "<p> E-mail : $emailUsuario </p>";
         // echo "<p>Senha : $senhaCodificada </p>";
         // echo "<p>Data de Criação : $dataCriado </p>";
+        
         if($senhaCodificada != $senhaConfirmarCod){
             echo "<p class='text-danger' >Senhas não conferem.</p>";
             exit;
@@ -54,14 +55,14 @@ if (isset($_POST['action'])) {
             $resultado = $sql->get_result();
             $linha = $resultado->fetch_array(MYSQLI_ASSOC);
 
-            //verificando a existencia do usuario no banco
+            
             if($linha['nomeDoUsuario'] == $nomeDoUsuario){
                 echo "<p class='text-danger'>Usuario indisponivel </p>";
 
             }elseif ($linha['emailUsuario'] == $emailUsuario){
                 echo "<p class='text-danger'>e-mail indisponivel </p>";
         }else{
-            //usuario pode ser cadastrado no banco de dados
+            
             $sql = $connect->prepare("INSERT into usuario (nomeDoUsuario,
             nomeCompleto, emailUsuario, urlImagem, senhaDoUsuario, dataCriado)
             values(?, ?, ?, ?, ?, ?)");
@@ -77,7 +78,7 @@ if (isset($_POST['action'])) {
         }
 
     } else if ($_POST['action'] == 'login') {
-        //Senão, teste se ação é login
+        
         $nomeUsuario = verificar_entrada($_POST['nomeUsuario']);
         $senhaUsuario = verificar_entrada($_POST['senhaUsuario']);
         $senha = sha1($senhaUsuario); //senha codificada
@@ -91,13 +92,11 @@ if (isset($_POST['action'])) {
             $_SESSION['nomeDoUsuario']= $nomeUsuario;
             
             if(!empty($_POST['lembrar'])){
-                // se lembrar nao estiver vazio
-                // a pessoa quer ser lembrada
+                
                 setcookie("nomeDoUsuario",$nomeUsuario, time()+(60*60*24*30));
                 setcookie("senhaDoUsuario", $senhaUsuario, time()+(60*60*24*30));
             }else {
-                //a pessoa NAO quer ser lembrada
-                //limpando o cookie
+                
                 setcookie("nomeDoUsuario", "");
                 setcookie("senhaDoUsuario", "");
                 
@@ -115,12 +114,26 @@ if (isset($_POST['action'])) {
 
 
     } else if ($_POST['action'] == 'senha') {
-        //Senão,teste se ação é recuperar senha
-        echo "\n<p>senha</p>";
-        echo "\n<pre>";
-        print_r($_POST);
-        echo "\n</pre";
+        $email = verificar_entrada($_POST['emailGerarSenha']);
+        $sql = $connect->prepare("SELECT idUsuario FROM usuario WHERE emailUsuario = ?");
+        $sql->bind_param("s", $email);
+        $sql->execute();
+        $resposta = $sql->get_result();
+        if($resposta->num_rows > 0 ){
+            $frase = "novasentaoamigosdobrausuledomundobatatadoceeamigosnochurrascocomchimarraoeamigosolohaaanovasentaofamilia";
+            $palavra_secreta = str_shuffle($frase);
+            $token = substr($palavra_secreta,0,10);
+            
+            $sql = $connect->prepare("UPDATE usuario SET token=?, SET token=?,
+            tempoDeVida=DATE_ADD(NOW(),INTERVAL 1 MINUTE) WHERE emailUsuario = ?");
+            $sql->bind_param("ss", $token, $email);
+            $sql->execute();
+            echo "Token no banco de dados";
 
+        }else{
+            echo "E-mail nao encontrado";
+        }
+        
     } else {
         header("location:index.php");
     }
